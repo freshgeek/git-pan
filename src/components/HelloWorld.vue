@@ -51,6 +51,9 @@ export default {
     handleEdit (index, row) {
       console.log(index, row)
       let download = '/static/file/' + this.tableData[index].name.substr(2)
+      if (location.href.toString().indexOf('git') > -1) {
+        download = '/git-pan' + download
+      }
       window.open(download, '_blank')
     },
     handleDelete (index, row) {
